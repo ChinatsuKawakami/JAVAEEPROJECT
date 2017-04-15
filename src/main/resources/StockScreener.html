@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+ 
+ xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+  <title><ui:insert name="title">Stock Screener</ui:insert></title>
+</h:head>
+<h:body>
+<!--<ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>-->
+
+<div id="header">
+    <ui:insert name="header">
+ <CENTER><h1>Stock Screener</h1></CENTER>
+    
+    	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+    	<!-- <ui:include src="header.xhtml"/> -->
+    </ui:insert>
+</div>
+<CENTER>
+<div id="content">
+  <ui:insert name="content">
+
+ <input type="button" value="screenerCriteria" id="screenerCriteria" action="#{stockscreener.Reload}" />
+ <a href="ShowResult.html"><input type="button" id="searchResult" value="SearchResult" /></a>
+  <table class="type00">
+	<tr>
+		<th scope="row"></th>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		<select>
+  <option id="perset" value="perset">Perset Screen</option>
+ <!--option value="strong">Strong Forecasted Growth</option>
+  <option value="small">Small Cap Value</option>
+  <option value="mid">Mid Cap Value</option>
+   <option value="large">Large Cap Value</option>
+  <option value="scgrpwth">Small Cap Growth</option>
+  <option value="mcg">Mid  Cap Growth</option>
+  <option value="lcg">Large Cap Growth</option>
+   <option value="scm">Small Cap Momentum</option>
+  <option value="mcm">Mid Cap Momentum</option>
+  <option value="lcm">Large Cap Momentum</option>
+  <option value="dpd">Dogs of Dow</option>
+   <option value="bf">Bottom Fishing</option>
+  <option value="lsr">Large Sales Revenue</option>
+  <option value="hv">High Volume</option>
+  <option value="lmc">Largest Market Cap</option>-->
+</select>
+		</td>
+		<td>
+		<select>
+		 <option value="saveList">Saved Screens</option>
+		 </select>
+		</td>
+		<td>
+		<input type="submit" value="Save" action="#{StockScreener.Save}" />
+		</td>
+		<td>
+          <input type="reset" id="deleteAllData" value="Delete" action="stockstcreener.Reload()"/>
+		</td>
+	</tr>
+
+	
+
+
+</table>
+    	<table class="type01" border="1">
+    
+  
+		<tr>
+		<td>Delete</td>
+		<td>Criteria</td>
+		<td>Condition</td>
+		<td>Value</td>
+		</tr>
+		
+       
+	<tr id="deleterow1">
+	
+	
+		<td>
+				
+		<input type="reset" value="x" id="delete1" key="delete1" action="#{stockScreener.Delete(delete1)}" />
+		</td>
+	
+		<td>
+		<select>
+            <option value="descriptive">Descriptive</option>
+            <option id="valueEx1" value="set_valueEx(Exchange)">Exchange</option>
+          </select>
+		</td>
+	
+			<td>
+			<select>
+            <option id="condition1Eq" value="set_condition(equal)" >=</option>
+            <option id="condition1No" value="set_condition(notequal)">Not =</option>
+             </select>
+             </td>
+				<td>
+				<select>
+            <option id="tse1" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
+           <!-- <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>
+	       </tr>
+     		
+	
+	<tr id="deleterow2">	
+	<td>
+		<input type="reset" value="x" id="delete2" key="delete2" action="#{stockScreener.Delete(delete2)}" />
+		</td>
+		<td>
+			<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+				<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+				<select>
+            <option id="tse2" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
+         <!-- <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>			
+	</tr>
+	
+	<tr id="deleterow3">
+	
+				<td>
+		<input type="reset" value="x" id="delete3" key="delete3" action="#{stockScreener.Delete(delete3)}"/>
+		</td>
+		<td>
+		<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+				<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+			<select>
+           <option id="tse3" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
+           <!-- <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>
+					
+	</tr>
+	
+	<tr id="deleterow4">
+	
+				<td>
+		<input type="reset" value="x" id="delete4" key="delete4" action="#{stockScreener.Delete(delete4)}" />
+		</td>
+		<td>
+		<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+				<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+					<select>
+            <option value="#{stockscreener._valueEx}" id="tse4">Toronto Stock Exchange</option>
+          <!-- <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>					
+	</tr>
+	
+	
+	<tr id="deleterow5">
+	
+				<td>
+		<input type="reset" value="x" id="delete5" key="delete5" action="#{stockScreener.Delete(delete5)}" />
+		</td>
+		<td>
+			<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+			<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+					<select>
+            <option value="#{stockscreener._valueEx}" id="tse5">Toronto Stock Exchange</option>
+         <!--  <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>
+					
+	</tr>
+	
+	<tr id="deleterow6">
+		
+				<td>
+		<input type="reset" value="x" id="delete6" key="delete6" action="#{stockScreener.Delete(delete6)}"/>
+		</td>
+		<td>
+		<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+				<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+						<select>
+            <option id="tse6" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
+        <!--  <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>
+					
+	</tr>
+	<tr id="deleterow7">
+		
+				<td>
+		<input type="reset" value="x" id="delete7" key="delete7" action="#{stockScreener.Delete(delete7)}"/>
+		</td>
+		<td>
+			<select>
+            <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+          </select>
+		</td>
+			<td>
+				<select>
+            <option value="equal">=</option>
+            <option value="notequal">Not =</option>
+             </select>
+             </td>
+				<td>
+							<select>
+            <option id="tse7" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
+        <!--  <option value="tve">TSX Venture Exchange</option>
+             <option value="nyse">NYSE</option>
+            <option value="mkt">NYSE MKT</option>
+             <option value="nasdaq">NASDAQ</option>
+            <option value="aue">All US Exchanges</option>
+            <option value="acm">All Canadian Markets</option>-->
+             </select>
+             </td>
+					
+	</tr>
+	</table>
+	<table>
+	<tr>
+
+	<td>
+	<a href="ShowResult.html" ><input type="reset" value="Run Server" id="runBTN" /></a>
+	</td>
+	</tr>
+	</table>
+
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+	  	<!-- <div> -->
+    	<!-- <ui:include src="content.xhtml"/> -->  
+    	<!-- </div> -->
+  </ui:insert>
+</div>
+</CENTER>
+<div id="footer">
+  <ui:insert name="footer">
+    <h4>COMP303-JavaEEProject</h4>
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+		<!--<ui:include src="footer.xhtml"/>  -->
+  </ui:insert>
+</div>
+
+</h:body>
+
+</html>

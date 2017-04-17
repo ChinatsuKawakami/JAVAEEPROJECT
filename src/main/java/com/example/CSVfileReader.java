@@ -39,16 +39,7 @@ public class CSVfileReader {
 		SortedMap<DateTime, StockData> result = new TreeMap<DateTime ,StockData>();
 		String csvFile = path + symbol + ".csv";
        
-	   if(symbol=="AMAZ")
-	   {
-		   sto.set_companyName("AMAZON"); 
-		   
-	   }
-	   else if(symbol=="GOOG")
-	   {
-		   sto.set_companyName("GOOGLE");
-	   }
-		
+
 	
 	try
 	{
@@ -65,15 +56,13 @@ public class CSVfileReader {
 		  
 		    Stock st = new Stock();
 		    st.set_symbol(symbol);
-		    st.set_companyName(sto.get_companyName());
-		    st.set_price(Double.parseDouble(data[1]));
-		    st.set_high(Double.parseDouble(data[2]));
-		    st.set_low(Double.parseDouble(data[3]));
-		    st.set_closePrice(Double.parseDouble(data[4]));
-		    st.set_volume(Integer.parseInt(data[5]));
-		    
-		    
-			
+		    st.set_companyName(data[1]);
+		  /*  st.set_price(Double.parseDouble(data[1]));
+		    st.set_change(Double.parseDouble(data[2]));
+		    st.set_changePercent(Double.parseDouble(data[3]));*/
+		//    st.set_closePrice(Double.parseDouble(data[4]));
+		//    st.set_volume(Integer.parseInt(data[5]));
+		    st.set_marketCap(Double.parseDouble(data[2]));
 		br.close();
 		osr.close();
 		}// end while

@@ -19,16 +19,11 @@ import com.example.CSVfileReader;
 @SessionScoped
 public class StockScreener {
 
-	private int _deleteId;
+
 	private String _valueEx;
 	private String _condition;
 
-	// List to add Removed id
-    List removeId = null;
-    // count for removeid
-     int i = 0;
-	 
-     
+
      
  	public String get_condition() {
 		return _condition;
@@ -50,17 +45,7 @@ public class StockScreener {
 	 
 	 
 	
-	public int get_deleteId() {
-		return _deleteId;
-	}
 
-
-
-	public void set_deleteId(int _deleteId) {
-		this._deleteId = _deleteId;
-	}
-  
-	
 	// method to reload 
 	public void Reload()
 	{
@@ -72,7 +57,7 @@ public class StockScreener {
 	{
 		String path = "/demo/csv/";
 		String symbol1 ="AMAZ";
-		//String symbol2 = "GOOG";
+		String symbol2 = "GOOG";
 		if(this._valueEx=="Exchange")
 		{
 			CSVfileReader csr = new CSVfileReader();
@@ -97,57 +82,6 @@ public class StockScreener {
 
  
   //method to delete row
-	public void Delete(int deleteId)
-	{
-		int removeditem;
-		 String id = "";
-		
-		switch(deleteId)
-		{
-		
-		 id = "delete";
-		  case id+1:
-		  Remove(id+1);
-		  removeditem=id+1;
-		  break;
-		  
-		  case id+2:
-	      Remove(id+2);
-		  removeditem=id+2;
-		  break;
-		  
-		  case id+3:
-		  Remove(id+3);
-		  removeditem=id+3;
-		  break;
-		  
-		  case id+4:
-	      Remove(id+4);
-		  removeditem=id+4;
-		  break;
-		  
-		  case id+5:
-		  Remove(id+5);
-		  removeditem=id+5;
-		  break;
-		  
-		  case id+6:
-	      Remove(id+6);
-		  removeditem=id+6;
-		  break;
-		  
-		  case id+7:
-	      Remove(id+7);
-		  removeditem=id+7;
-		  break;
-	
-		}//end switch
-		   removeId = new List();
-		   removeId.add(i,removeditem);
-		   i++;
-		
-		
-	}//Delete method
 	
 }// end of class
 

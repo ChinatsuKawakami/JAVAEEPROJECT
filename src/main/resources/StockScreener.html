@@ -30,11 +30,8 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
  <a href="ShowResult.html"><input type="button" id="searchResult" value="SearchResult" /></a>
   <table class="type00">
 	<tr>
-		<th scope="row"></th>
-		<td>
-		</td>
-		<td>
-		</td>
+		<th scope="row">
+	     </th>
 		<td>
 		<select>
   <option id="perset" value="perset">Perset Screen</option>
@@ -54,18 +51,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
   <option value="hv">High Volume</option>
   <option value="lmc">Largest Market Cap</option>-->
 </select>
-		</td>
-		<td>
-		<select>
-		 <option value="saveList">Saved Screens</option>
-		 </select>
-		</td>
-		<td>
-		<input type="submit" value="Save" action="#{StockScreener.Save}" />
-		</td>
-		<td>
-          <input type="reset" id="deleteAllData" value="Delete" action="stockstcreener.Reload()"/>
-		</td>
+</td>
 	</tr>
 
 	
@@ -76,7 +62,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     
   
 		<tr>
-		<td>Delete</td>
+	
 		<td>Criteria</td>
 		<td>Condition</td>
 		<td>Value</td>
@@ -86,15 +72,15 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	<tr id="deleterow1">
 	
 	
-		<td>
-				
-		<input type="reset" value="x" id="delete1" key="delete1" action="#{stockScreener.Delete(delete1)}" />
-		</td>
+
 	
 		<td>
 		<select>
-            <option value="descriptive">Descriptive</option>
-            <option id="valueEx1" value="set_valueEx(Exchange)">Exchange</option>
+               <option value="descriptive">Descriptive</option>
+            <option value="Exchange">Exchange</option>
+           
+            <option value= "Gics">GICS</option>
+           
           </select>
 		</td>
 	
@@ -106,26 +92,22 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
              </td>
 				<td>
 				<select>
-            <option id="tse1" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
-           <!-- <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
+             <option value="nasdaq1">NASDAQ</option>
+            <option value="nystock1">New York Stock Exchange</option>
              </select>
              </td>
 	       </tr>
      		
 	
 	<tr id="deleterow2">	
-	<td>
-		<input type="reset" value="x" id="delete2" key="delete2" action="#{stockScreener.Delete(delete2)}" />
-		</td>
+
 		<td>
 			<select>
-            <option value="descriptive">Descriptive</option>
+             <option value="descriptive">Descriptive</option>
             <option value="Exchange">Exchange</option>
+         
+            <option value= "Gics">GICS</option>
+        
           </select>
 		</td>
 			<td>
@@ -136,43 +118,67 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
              </td>
 				<td>
 				<select>
-            <option id="tse2" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
-         <!-- <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
+           <option value="nasdaq2">NASDAQ</option>
+            <option value="nystock2">New York Stock Exchange</option>
              </select>
              </td>			
 	</tr>
 	
 	<tr id="deleterow3">
 	
-				<td>
-		<input type="reset" value="x" id="delete3" key="delete3" action="#{stockScreener.Delete(delete3)}"/>
-		</td>
+		
 		<td>
 		<select>
-            <option value="descriptive">Descriptive</option>
-            <option value="Exchange">Exchange</option>
+             <option value="descriptive">Descriptive</option>
+            <option value="MarketCap">MarketCap</option>
+       <option value="ClosePrice">Close Price</option>
           </select>
 		</td>
 			<td>
 				<select>
-            <option value="equal">=</option>
-            <option value="notequal">Not =</option>
+	        <option value="Between">Between</option>
+            <option value="equalgreter">>=</option>
+            <option value="equalless"> <=</option>
              </select>
              </td>
+           
 				<td>
 			<select>
-           <option id="tse3" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
-           <!-- <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
+           <option id="closePriceOne1" value="0">0</option>
+            <option id="closePriceOne2" value="100">100m</option>
+              <option id="closePriceOne3" value="250">250m</option>
+            <option id="closePriceOne4" value="500">500m</option>
+             <option id="closePriceOne5" value="1b">1 b</option>
+            <option id="closePriceOne6" value="2b">2 b</option>
+              <option id="closePriceOne7" value="3b">3 b</option>
+            <option id="closePriceOne8" value="4b">4 b</option>
+             <option id="closePriceOne9" value="5b">5 b</option>
+            <option id="closePriceOne10" value="10b">10 b</option>
+              <option id="closePriceOne11" value="15b">15 b</option>
+            <option id="closePriceOne12" value="25b">25 b</option>
+             <option id="closePriceOne13" value="50b">50 b</option>
+            <option id="closePriceOne14" value="75b">75 b</option>
+              <option id="closePriceOne15" value="100b">100 b</option>
+            <option id="closePriceOne16" value="200b">200 b</option>
+            
+             </select>
+             <select>
+        <option id="closePriceTwo1" value="0">0</option>
+            <option id="closePriceTwo2" value="100">100m</option>
+              <option id="closePriceTwo3" value="250">250m</option>
+            <option id="closePriceTwo4" value="500">500m</option>
+             <option id="closePriceTwo5" value="1b">1 b</option>
+            <option id="closePriceTwo6" value="2b">2 b</option>
+              <option id="closePriceTwo7" value="3b">3 b</option>
+            <option id="closePriceTwo8" value="4b">4 b</option>
+             <option id="closePriceTwo9" value="5b">5 b</option>
+            <option id="closePriceTwo10" value="10b">10 b</option>
+              <option id="closePriceTwo11" value="15b">15 b</option>
+            <option id="closePriceTwo12" value="25b">25 b</option>
+             <option id="closePriceTwo13" value="50b">50 b</option>
+            <option id="closePriceTwo14" value="75b">75 b</option>
+              <option id="closePriceTwo15" value="100b">100 b</option>
+            <option id="closePriceTwo16" value="200b">200 b</option>
              </select>
              </td>
 					
@@ -180,126 +186,64 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 	<tr id="deleterow4">
 	
-				<td>
-		<input type="reset" value="x" id="delete4" key="delete4" action="#{stockScreener.Delete(delete4)}" />
-		</td>
+		
 		<td>
 		<select>
-            <option value="descriptive">Descriptive</option>
-            <option value="Exchange">Exchange</option>
+                <option value="descriptive">Descriptive</option>
+           
+            <option value="MarketCap">MarketCap</option>
+         
+            <option value="ClosePrice">Close Price</option>
           </select>
 		</td>
 			<td>
 				<select>
-            <option value="equal">=</option>
-            <option value="notequal">Not =</option>
+         <option value="Between">Between</option>
+            <option value="equalgreter">>=</option>
+            <option value="equalless"> <=</option>
              </select>
              </td>
 				<td>
 					<select>
-            <option value="#{stockscreener._valueEx}" id="tse4">Toronto Stock Exchange</option>
-          <!-- <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
+             <option id="closePriceThree1" value="0">0</option>
+            <option id="closePriceThree2" value="100m">100m</option>
+              <option id="closePriceThree3" value="250m">250m</option>
+            <option id="closePriceThree4" value="500m">500m</option>
+             <option id="closePriceThree5" value="1b">1 b</option>
+            <option id="closePriceThree6" value="2b">2 b</option>
+              <option id="closePriceThree7" value="3b">3 b</option>
+            <option id="closePriceThree8" value="4b">4 b</option>
+             <option id="closePriceThree9" value="5b">5 b</option>
+            <option id="closePriceThree10" value="10b">10 b</option>
+              <option id="closePriceThree11" value="15b">15 b</option>
+            <option id="closePriceThree12" value="25b">25 b</option>
+             <option id="closePriceThree13" value="50b">50 b</option>
+            <option id="closePriceThree14" value="75b">75 b</option>
+              <option id="closePriceThree15" value="100b">100 b</option>
+            <option id="closePriceThree16" value="200b">200 b</option>
+             </select>
+             <select>
+               <option id="closePriceFour1" value="0m">0</option>
+            <option id="closePriceFour2" value="100m">100m</option>
+              <option id="closePriceFour3" value="250m">250m</option>
+            <option id="closePriceFour4" value="500m">500m</option>
+             <option id="closePriceFour5" value="1b">1 b</option>
+            <option id="closePriceFour6" value="2b">2 b</option>
+              <option id="closePriceFour7" value="3b">3 b</option>
+            <option id="closePriceFour8" value="4b">4 b</option>
+             <option id="closePriceFour9" value="5b">5 b</option>
+            <option id="closePriceFour10" value="10b">10 b</option>
+              <option id="closePriceFour11" value="15b">15 b</option>
+            <option id="closePriceFour12" value="25b">25 b</option>
+             <option id="closePriceFour13" value="50b">50 b</option>
+            <option id="closePriceFour14" value="75b">75 b</option>
+              <option id="closePriceFour15" value="100b">100 b</option>
+            <option id="closePriceFour16" value="200b">200 b</option>
              </select>
              </td>					
 	</tr>
 	
 	
-	<tr id="deleterow5">
-	
-				<td>
-		<input type="reset" value="x" id="delete5" key="delete5" action="#{stockScreener.Delete(delete5)}" />
-		</td>
-		<td>
-			<select>
-            <option value="descriptive">Descriptive</option>
-            <option value="Exchange">Exchange</option>
-          </select>
-		</td>
-			<td>
-			<select>
-            <option value="equal">=</option>
-            <option value="notequal">Not =</option>
-             </select>
-             </td>
-				<td>
-					<select>
-            <option value="#{stockscreener._valueEx}" id="tse5">Toronto Stock Exchange</option>
-         <!--  <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
-             </select>
-             </td>
-					
-	</tr>
-	
-	<tr id="deleterow6">
-		
-				<td>
-		<input type="reset" value="x" id="delete6" key="delete6" action="#{stockScreener.Delete(delete6)}"/>
-		</td>
-		<td>
-		<select>
-            <option value="descriptive">Descriptive</option>
-            <option value="Exchange">Exchange</option>
-          </select>
-		</td>
-			<td>
-				<select>
-            <option value="equal">=</option>
-            <option value="notequal">Not =</option>
-             </select>
-             </td>
-				<td>
-						<select>
-            <option id="tse6" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
-        <!--  <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
-             </select>
-             </td>
-					
-	</tr>
-	<tr id="deleterow7">
-		
-				<td>
-		<input type="reset" value="x" id="delete7" key="delete7" action="#{stockScreener.Delete(delete7)}"/>
-		</td>
-		<td>
-			<select>
-            <option value="descriptive">Descriptive</option>
-            <option value="Exchange">Exchange</option>
-          </select>
-		</td>
-			<td>
-				<select>
-            <option value="equal">=</option>
-            <option value="notequal">Not =</option>
-             </select>
-             </td>
-				<td>
-							<select>
-            <option id="tse7" value="#{stockscreener._valueEx}">Toronto Stock Exchange</option>
-        <!--  <option value="tve">TSX Venture Exchange</option>
-             <option value="nyse">NYSE</option>
-            <option value="mkt">NYSE MKT</option>
-             <option value="nasdaq">NASDAQ</option>
-            <option value="aue">All US Exchanges</option>
-            <option value="acm">All Canadian Markets</option>-->
-             </select>
-             </td>
-					
-	</tr>
 	</table>
 	<table>
 	<tr>

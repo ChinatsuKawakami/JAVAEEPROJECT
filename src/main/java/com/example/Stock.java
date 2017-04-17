@@ -1,13 +1,15 @@
 package com.example;
 
-import javax.annotation.ManagedBean;
+import java.io.IOException;
 
+import javax.faces.bean.*;
+import com.example.CSVfileReader;
 import org.springframework.web.context.annotation.RequestScope;
 
 //import javax
 //com.example.ManagedBean
 
-@ManagedBean(value="stock")
+@ManagedBean(name="stock")
 @RequestScope
 public class Stock {
 	
@@ -16,8 +18,6 @@ public class Stock {
 	private double _price;
 	private double _change;
 	private double _changePercent;
-	private double _high;
-	private double _low;
 	private double _closePrice;
 	private int _volume;
 	private double _marketCap;
@@ -55,18 +55,7 @@ public class Stock {
 	public void set_changePercent(double _changePercent) {
 		this._changePercent = _changePercent;
 	}
-	public double get_high() {
-		return _high;
-	}
-	public void set_high(double _52WkHigh) {
-		this._high = _52WkHigh;
-	}
-	public double get_low() {
-		return _low;
-	}
-	public void set_low(double _52WkLow) {
-		this._low = _52WkLow;
-	}
+
 	public double get_closePrice() {
 		return _closePrice;
 	}
@@ -86,7 +75,18 @@ public class Stock {
 		this._marketCap = _marketCap;
 	}
 
-	
+    public static void Display()
+    {
+    //	CSVfileReader r = new CSVfileReader();
+    	try {
+			CSVfileReader.readCsvFunForOneSymbol("/demo/csv/Stock.csv", "ss");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    }
 	
 
 }

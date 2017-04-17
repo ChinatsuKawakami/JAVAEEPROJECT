@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -10,7 +11,7 @@
   <title><ui:insert name="title">Result</ui:insert></title>
 </h:head>
 
-<body>
+<h:body>
 <Center>
 <ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
 
@@ -24,7 +25,7 @@
 <div id="content">
   <ui:insert name="content">
 <a href="StockScreener.html" ><input type="button" value="screenerCriteria" id="screenerCriteria" /></a>
-<input type="button" id="searchResult" value="SearchResult" action="#{stockscreener.Reload}"/>
+<h:commandButton type="button" id="searchResult" value="SearchResult" onClick="#{stockscreener.Reload()}"/>
 <table border="1">
 <tr>
 <th>Symbol</th>
@@ -39,14 +40,15 @@
 
 <tr>
 
-<td><h:inputTextArea value="#{stock.get_symbol}" /></td>
-<td><h:inputTextArea value="#{stock.get_companyName}" /></td>
-<td><h:inputTextArea value="#{stock.get_price}" /></td>
-<td><h:inputTextArea value="#{stock.get_High}" /></td>
-<td><h:inputTextArea value="#{stock.get_Low}" /></td>
-<td><h:inputTextArea value="#{stock.get_closePrice}" /></td>
-<td><h:inputTextArea value="#{stock.get_volume}" /></td>
-<td><a href="ShowPerformance.html"><Input type="button" action="#{stock.ShowPerformance}" value="More Detail"  /></a>
+<td><h:inputTextArea value="${stock._symbol}"/></td>
+<td><h:inputTextArea value="#{stock._companyName}" /></td>
+<td><h:inputTextArea value="#{stock._price}" /></td>
+<td><h:inputTextArea value="#{stock._change}" /></td>
+<td><h:inputTextArea value="#{stock._changePercent}" /></td>
+<td><h:inputTextArea value="#{stock._marketCap}" /></td>
+<td><h:inputTextArea value="#{stock._closePrice}" /></td>
+<td><h:inputTextArea value="#{stock._volume}" /></td>
+<td><h:button type="button" outcome="ShowPerformance.jsp" value="More Detail"  />
 
 </td>
 </tr>
@@ -63,7 +65,7 @@
 
   </ui:insert>
 </div>
-</center>
-</body>
+</Center>
+</h:body>
 
 </html>

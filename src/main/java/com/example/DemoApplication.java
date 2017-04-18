@@ -15,12 +15,8 @@ public class DemoApplication {
 	public static void main(String[] args) throws IOException {
 		//SpringApplication.run(DemoApplication.class, args);
     System.out.println("SPring!!!");
-   
-	//	StockScreener s = new StockScreener();
-	//	s.ShowResult();
-   
-   // Stock.Display();
-
-   // CSVfileReader.readCsvFunForOneSymbol("/demo/csv/","AMAZ");
+   Stock s = new Stock();
+ Stock.Display();
+		
 }
 }

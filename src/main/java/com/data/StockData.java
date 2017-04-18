@@ -1,12 +1,14 @@
 package com.data;
 
+import java.util.Date;
+
 import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 
 public class StockData {
 	
 	private String symbol;
 
-	private DateTime date;
+	private Date date;
 
 	private String openPrice;
 
@@ -18,7 +20,7 @@ public class StockData {
 
 	private String adjClosePrice;
 
-	private String volume;
+	private double volume;
 
 	public String getSymbol() {
 		return symbol;
@@ -28,12 +30,12 @@ public class StockData {
 		this.symbol = symbol;
 	}
 
-	public DateTime getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(DateTime date) {
-		this.date = date;
+	public void setDate(Date date2) {
+		this.date = date2;
 	}
 
 	public String getOpenPrice() {
@@ -76,11 +78,11 @@ public class StockData {
 		this.adjClosePrice = adjClosePrice;
 	}
 
-	public String getVolume() {
+	public double getVolume() {
 		return volume;
 	}
 
-	public void setVolume(String volume) {
+	public void setVolume(double volume) {
 		this.volume = volume;
 	}
 

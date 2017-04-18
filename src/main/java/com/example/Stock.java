@@ -1,9 +1,12 @@
 package com.example;
 
 import java.io.IOException;
-
+import java.util.Date;
+import java.io.*;
 import javax.faces.bean.*;
 import com.example.CSVfileReader;
+
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 import org.springframework.web.context.annotation.RequestScope;
 
 //import javax
@@ -13,23 +16,51 @@ import org.springframework.web.context.annotation.RequestScope;
 @RequestScope
 public class Stock {
 	
+	private Date _date;
 	private String _symbol;
 	private String _companyName;
 	private double _price;
 	private double _change;
 	private double _changePercent;
 	private double _closePrice;
-	private int _volume;
+	private double _volume;
 	private double _marketCap;
-	
+	private double _highPrice;
+	private double _lowPrice;
+	private String _adjClosePrice;
 	
 	//getter and setter 
-	
+	public double get_highPrice() {
+		return _highPrice;
+	}
+	public void set_highPrice(double _highPrice) {
+		this._highPrice = _highPrice;
+	}
+	public double get_lowPrice() {
+		return _lowPrice;
+	}
+	public void set_lowPrice(double _lowPrice) {
+		this._lowPrice = _lowPrice;
+	}
+
+
+	public String get_adjClosePrice() {
+		return _adjClosePrice;
+	}
+	public void set_adjClosePrice(String _adjClosePrice) {
+		this._adjClosePrice = _adjClosePrice;
+	}
 	public String get_symbol() {
 		return _symbol;
 	}
 	public void set_symbol(String _symbol) {
 		this._symbol = _symbol;
+	}
+	public Date get_date() {
+		return _date;
+	}
+	public void set_date(Date _date) {
+		this._date = _date;
 	}
 	public String get_companyName() {
 		return _companyName;
@@ -62,11 +93,11 @@ public class Stock {
 	public void set_closePrice(double _closePrice) {
 		this._closePrice = _closePrice;
 	}
-	public int get_volume() {
+	public double get_volume() {
 		return _volume;
 	}
-	public void set_volume(int _volume) {
-		this._volume = _volume;
+	public void set_volume(double d) {
+		this._volume = d;
 	}
 	public double get_marketCap() {
 		return _marketCap;
@@ -75,11 +106,13 @@ public class Stock {
 		this._marketCap = _marketCap;
 	}
 
+
     public static void Display()
     {
     //	CSVfileReader r = new CSVfileReader();
     	try {
-			CSVfileReader.readCsvFunForOneSymbol("/demo/csv/Stock.csv", "ss");
+          CSVfileReader.readCsvForOneSymbol("C:\\Users\\chinatsu\\Desktop\\School\\2017winterSemester\\COMP303_JAVAEE\\demo\\csv\\" ,"AAL");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

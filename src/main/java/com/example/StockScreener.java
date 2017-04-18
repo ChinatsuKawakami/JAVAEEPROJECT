@@ -53,7 +53,7 @@ public class StockScreener {
 	}
 	
 	// method to read csv file
-	public void ShowResult()
+/*	public void ShowResult()
 	{
 		String path = "/demo/csv/";
 		String symbol1 ="AMAZ";
@@ -62,14 +62,14 @@ public class StockScreener {
 		{
 			CSVfileReader csr = new CSVfileReader();
 			try {
-				csr.readCsvFunForOneSymbol(path,symbol1);
+				csr.readCsvForOneSymbol(path,symbol1);
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
-				csr.readCsvFunForOneSymbol(path,symbol2);
+				csr.readCsvForOneSymbol(path,symbol2);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -77,7 +77,7 @@ public class StockScreener {
 		}
 			
 	}
-	
+	*/
 	
 
  

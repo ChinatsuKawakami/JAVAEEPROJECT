@@ -81,6 +81,7 @@ public class StockData {
 	public double getVolume() {
 		return volume;
 	}
+	
 
 	public void setVolume(double volume) {
 		this.volume = volume;

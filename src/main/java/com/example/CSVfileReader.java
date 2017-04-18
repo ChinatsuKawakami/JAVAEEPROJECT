@@ -54,14 +54,14 @@ public class CSVfileReader {
 			
 		    s.set_date(DATE_FORMAT.parse(array[0]));
 		    s.set_adjClosePrice(array[6]);
-		  
+		   s.set_marketCap(Double.parseDouble(array[4]));
 		    s.set_highPrice(Double.parseDouble(array[2]));
 		    s.set_lowPrice(Double.parseDouble(array[3]));
 		    s.set_price(Double.parseDouble(array[1]));
 		    s.set_symbol(symbol);
 		    s.set_volume(Double.parseDouble(array[5]));
 		    
-		    System.out.println(s.get_volume());
+		   
 
 		}//end while
 		

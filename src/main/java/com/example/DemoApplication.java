@@ -16,7 +16,8 @@ public class DemoApplication {
 		//SpringApplication.run(DemoApplication.class, args);
     System.out.println("SPring!!!");
    Stock s = new Stock();
- Stock.Display();
+ //Stock.Display();
+   System.out.println(s.get_marketCap());
 		
 }
 }

@@ -77,9 +77,11 @@ public class Stock {
 	public double get_change() {
 		return _change;
 	}
+	
 	public void set_change(double _change) {
 		this._change = _change;
 	}
+	
 	public double get_changePercent() {
 		return _changePercent;
 	}

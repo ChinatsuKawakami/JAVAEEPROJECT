@@ -5,86 +5,29 @@ import java.util.Date;
 import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 
 public class StockData {
+	private String _companyName;
+	private double _marketCap;
+
 	
-	private String symbol;
-
-	private Date date;
-
-	private String openPrice;
-
-	private String highPrice;
-
-	private String lowPrice;
-
-	private String closePrice;
-
-	private String adjClosePrice;
-
-	private double volume;
-
-	public String getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date2) {
-		this.date = date2;
-	}
-
-	public String getOpenPrice() {
-		return openPrice;
-	}
-
-	public void setOpenPrice(String openPrice) {
-		this.openPrice = openPrice;
-	}
-
-	public String getHighPrice() {
-		return highPrice;
-	}
-
-	public void setHighPrice(String highPrice) {
-		this.highPrice = highPrice;
-	}
-
-	public String getLowPrice() {
-		return lowPrice;
-	}
-
-	public void setLowPrice(String lowPrice) {
-		this.lowPrice = lowPrice;
-	}
-
-	public String getClosePrice() {
-		return closePrice;
-	}
-
-	public void setClosePrice(String closePrice) {
-		this.closePrice = closePrice;
-	}
-
-	public String getAdjClosePrice() {
-		return adjClosePrice;
-	}
-
-	public void setAdjClosePrice(String adjClosePrice) {
-		this.adjClosePrice = adjClosePrice;
-	}
-
-	public double getVolume() {
-		return volume;
-	}
 	
-
-	public void setVolume(double volume) {
-		this.volume = volume;
+	public String get_companyName() {
+		return _companyName;
 	}
-
+	public void set_companyName(String _companyName) {
+		this._companyName = _companyName;
+	}
+	public double get_marketCap() {
+		return _marketCap;
+	}
+	public void set_marketCap(double _marketCap) {
+		this._marketCap = _marketCap;
+	}
+	public String get_exChange() {
+		return _exChange;
+	}
+	public void set_exChange(String _exChange) {
+		this._exChange = _exChange;
+	}
+	private String _exChange;
+	
 }

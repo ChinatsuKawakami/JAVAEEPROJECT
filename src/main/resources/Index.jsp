@@ -58,27 +58,26 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 		<td>Condition</td>
 		<td>Value</td>
 		</tr>
-       
-	<tr id="deleterow1">
+ <tr id="deleterow1">
 		<td>
-		<h:selectOneMenu size = 3>
+		<h:selectOneMenu id="selection1cri"size = 3>
             <f:selectItems value="Descriptive"></f:selectItems>
-            <f:selectItems value="Exchange"></f:selectItems>
-            <f:selectItems value= "GICS"></f:selectItems>
+            <f:selectItems id="ex1" value="Exchange"></f:selectItems>
+            <f:selectItems id="gi1" value= "GICS"></f:selectItems>
            
         </h:selectOneMenu>
 		</td>
 	
 			<td>
-			<h:selectOneMenu size = 2>
+			<h:selectOneMenu id="selection1con" size = 2>
             <f:selectItems id="condition1Eq" value="=" ></f:selectItems>
             <f:selectItems id="condition1No" value="Not="></f:selectItems>
              </h:selectOneMenu>
              </td>
 				<td>
-				<h:selectOneMenu size = 2>
-             <f:selectItems value="NASDAQ"></f:selectItems>
-             <f:selectItems value="New York Stock Exchange"></f:selectItems>
+				<h:selectOneMenu id="selection1val" size = 2>
+             <f:selectItems id="na2" value="NASDAQ"></f:selectItems>
+             <f:selectItems id="ny2" value="New York Stock Exchange"></f:selectItems>
              </h:selectOneMenu>
              </td>
 	       </tr>
@@ -87,23 +86,23 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	<tr id="deleterow2">	
 
 		<td>
-			<h:selectOneMenu size = 3>
+			<h:selectOneMenu id="selection2cri" size = 3>
               <f:selectItems value="Descriptive"></f:selectItems>
-            <f:selectItems value="Exchange"></f:selectItems>
-            <f:selectItems value= "GICS"></f:selectItems>
+            <f:selectItems id="ex2" value="Exchange"></f:selectItems>
+            <f:selectItems id="gi1" value= "GICS"></f:selectItems>
         
           </h:selectOneMenu>
 		</td>
 			<td>
-				<h:selectOneMenu size = 2>
-            <f:selectItem value="=">=</f:selectItem>
-            <f:selectItem value="Not="></f:selectItem>
+				<h:selectOneMenu id="selection2con" size = 2>
+            <f:selectItem id="condition2Eq" value="=">=</f:selectItem>
+            <f:selectItem id="condition2No" value="Not="></f:selectItem>
              </h:selectOneMenu>
              </td>
 				<td>
-				<h:selectOneMenu size=2>
-           <f:selectItem value="NASDAQ"></f:selectItem>
-            <f:selectItem value="New York Stock Exchange"></f:selectItem>
+				<h:selectOneMenu id="selection2val2" size=2>
+           <f:selectItem id="na2" value="NASDAQ"></f:selectItem>
+            <f:selectItem id="ny2" value="New York Stock Exchange"></f:selectItem>
              </h:selectOneMenu>
              </td>			
 	</tr>
@@ -112,22 +111,22 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 		
 		<td>
-		<h:selectOneMenu size=3>
+		<h:selectOneMenu id="selection3cri" size=3>
              <f:selectItem value="Descriptive"></f:selectItem>
-            <f:selectItem value="MarketCap"></f:selectItem>
-       <f:selectItem value="ClosePrice"></f:selectItem>
+            <f:selectItem  id="mc3" value="MarketCap"></f:selectItem>
+       <f:selectItem id="cp3" value="ClosePrice"></f:selectItem>
           </h:selectOneMenu >
 		</td>
 			<td>
-				<h:selectOneMenu size=3>
-	        <f:selectItem value="Between"></f:selectItem>
-            <f:selectItem  value=">=">></f:selectItem>
-            <f:selectItem value="<="></f:selectItem >
+				<h:selectOneMenu id="selection3con" size=3>
+	        <f:selectItem id="bt3" value="Between"></f:selectItem>
+            <f:selectItem id="ge3"  value=">="></f:selectItem>
+            <f:selectItem id="le3" value="<="></f:selectItem >
              </h:selectOneMenu>
              </td>
            
 				<td>
-			<h:selectOneMenu size = 16>
+			<h:selectOneMenu id="selection3val1" size = 16>
            <f:selectItem id="closePriceOne1" value="0"></f:selectItem>
            <f:selectItem id="closePriceOne2" value="100m"></f:selectItem>
            <f:selectItem id="closePriceOne3" value="250m"></f:selectItem >
@@ -146,7 +145,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
             <f:selectItem  id="closePriceOne16" value="200b"></f:selectItem >
             
              </h:selectOneMenu>
-             <h:selectOneMenu size = 16>
+             <h:selectOneMenu id="selection3val2" size = 16>
         <f:selectItem  id="closePriceTwo1" value="0"></f:selectItem >
             <f:selectItem  id="closePriceTwo2" value="100m"></f:selectItem >
               <f:selectItem  id="closePriceTwo3" value="250m"></f:selectItem >
@@ -172,23 +171,22 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 		
 		<td>
-		<h:selectOneMenu size = 3>
-                <f:selectItem value="Descriptive"></f:selectItem>
-           
-            <f:selectItem value="MarketCap"></f:selectItem>
+		<h:selectOneMenu id="selection4cri" size = 3>
+                <f:selectItem value="Descriptive"></f:selectItem>      
+            <f:selectItem id="mc4" value="MarketCap"></f:selectItem>
          
-            <f:selectItem value="ClosePrice"></f:selectItem>
+            <f:selectItem id="cp4" value="ClosePrice"></f:selectItem>
           </h:selectOneMenu>
 		</td>
 			<td>
-	  	<h:selectOneMenu size =3>
-            <f:selectItem value="Between"></f:selectItem>
-            <f:selectItem value=">="></f:selectItem>
-            <f:selectItem value="<="></f:selectItem>
+	  	<h:selectOneMenu id="selection4con" size =3>
+            <f:selectItem id="bt4" value="Between"></f:selectItem>
+            <f:selectItem id="ge4" value=">="></f:selectItem>
+            <f:selectItem id="le4" value="<="></f:selectItem>
              </h:selectOneMenu>
              </td>
 				<td>
-	     	<h:selectOneMenu size = 16>
+	     	<h:selectOneMenu id="selection4val1" size = 16>
              <f:selectItem id="closePriceThree1" value="0"></f:selectItem>
             <f:selectItem id="closePriceThree2" value="100m"></f:selectItem>
               <f:selectItem id="closePriceThree3" value="250m"></f:selectItem>
@@ -207,7 +205,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
             <f:selectItem id="closePriceThree16" value="200b"></f:selectItem>
              </h:selectOneMenu>
              
-             <h:selectOneMenu size = 16>
+             <h:selectOneMenu id="selection4val1" size = 16>
             <f:selectItem id="closePriceFour1" value="0m"></f:selectItem>
             <f:selectItem id="closePriceFour2" value="100m"></f:selectItem>
               <f:selectItem id="closePriceFour3" value="250m"></f:selectItem>

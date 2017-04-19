@@ -19,10 +19,9 @@ import com.example.CSVfileReader;
 @SessionScoped
 public class StockScreener {
 
-
 	private String _valueEx;
 	private String _condition;
-
+	
 
      
  	public String get_condition() {

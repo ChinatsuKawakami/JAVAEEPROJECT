@@ -14,11 +14,13 @@ import org.springframework.web.context.annotation.RequestScope;
 
 @ManagedBean(name="stock")
 @RequestScope
+
+
 public class Stock {
 	
 	private Date _date;
-	private String _symbol;
-	private String _companyName;
+	private String _symbol;//Ticker
+	private String _companyName;//ShortName
 	private double _price;
 	private double _change;
 	private double _changePercent;
@@ -28,7 +30,23 @@ public class Stock {
 	private double _highPrice;
 	private double _lowPrice;
 	private String _adjClosePrice;
+	private String _gicsSectorName;
+	private String _exchange;
 	
+	public String get_gicsSectorName() {
+		return _gicsSectorName;
+	}
+	public void set_gicsSectorName(String _gicsSectorName) {
+		this._gicsSectorName = _gicsSectorName;
+	}
+	public String get_exchange() {
+		return _exchange;
+	}
+	public void set_exchange(String _exchange) {
+		this._exchange = _exchange;
+	}
+
+
 	//getter and setter 
 	public double get_highPrice() {
 		return _highPrice;
@@ -108,12 +126,15 @@ public class Stock {
 		this._marketCap = _marketCap;
 	}
 
+	
 
     public static void Display()
     {
     //	CSVfileReader r = new CSVfileReader();
     	try {
           CSVfileReader.readCsvForOneSymbol("C:\\Users\\chinatsu\\Desktop\\School\\2017winterSemester\\COMP303_JAVAEE\\demo\\csv\\" ,"AAL");
+          //CSVfileReader.readCsvForOneSymbol("C:\\Users\\chinatsu\\Desktop\\School\\2017winterSemester\\COMP303_JAVAEE\\demo\\csv\\", "A");
+          CSVfileReader.readCsvForStockCSV("C:\\Users\\chinatsu\\Desktop\\School\\2017winterSemester\\COMP303_JAVAEE\\demo\\csv\\", "Stock");
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -122,6 +143,11 @@ public class Stock {
     	
     	
     }
-	
+    
+    public static void Check()
+    {
+    	
+    }
+
 
 }

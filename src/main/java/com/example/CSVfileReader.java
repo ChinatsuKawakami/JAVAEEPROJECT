@@ -173,6 +173,7 @@ public class CSVfileReader {
 
 	
 	// This is code for first page's list box (Values for Marketcap and Closed Price ) 
+	//*************************************************************************************************************
 	private Integer choose;
 	public Integer getChoose() {
 		return choose;
@@ -210,9 +211,9 @@ public class CSVfileReader {
 	{
 		return values;
 	}
-	
-	// This is the code for criteria 
-	
+//*************************************************************************************************	
+//**************************************************************************************************	
+	// This is code for first page's list box (Choose Exchnge or GIGS)
 	private Integer chooseCriteria;
 	
 
@@ -247,7 +248,10 @@ public class CSVfileReader {
 	public Map<String,Integer>getCriteriaItems2(){
 		return criteriaItems2;
 	}
+	//************************************************************************************************************************************
+	//************************************************************************************************************************************
 	
+	// To check the condtion ( between , >=, <= )
 	public Integer chooseCondition;
 	
 	public Integer getChooseCondition() {
@@ -274,10 +278,11 @@ public class CSVfileReader {
 		return checkCondition;
 	}
 	
+	//************************************************************************************************************************
+	//***************************************************************************************************************************
+	//to check the value
 	public Integer chooseValues;
 	
-	
-
 	public Integer getChooseValues() {
 		return chooseValues;
 	}
@@ -299,7 +304,8 @@ public class CSVfileReader {
 		return checkValues;
 	}
 	
-
+   //*******************************************************************************************************************************
+   //******************************************************************************************************************************
 	public static final SimpleDateFormat DATE_FORMAT =new SimpleDateFormat("yyyy-MM-dd");
 	public static SortedMap<Date, Stock> readCsvForOneSymbol(String path, String symbol)throws IOException {
 	SortedMap<Date, Stock> result = new TreeMap<Date, Stock>();
@@ -386,6 +392,9 @@ public class CSVfileReader {
 		return result;
 		
 	}
+	
+	
+	
 }
 
 

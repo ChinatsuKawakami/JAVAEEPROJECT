@@ -72,7 +72,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 			<td>
 			<h:selectOneMenu id="selection1con" value="#{csvfilereader.chooseCondition }" size = 2>
-			 <f:selectItems id="condition1" value="#{csvfilereader.checkCondeition }" >=</f:selectItems>
+			 <f:selectItems id="condition1" value="#{csvfilereader.checkCondeition }" ></f:selectItems>
           <!--  <f:selectItems id="condition1Eq" value="#{csvfilereader._condition }" >=</f:selectItems>
             <f:selectItems id="condition1No" value="#{csvfilereader._condition }">Not=</f:selectItems>-->
              </h:selectOneMenu>
@@ -101,8 +101,10 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 			<td>
 				<h:selectOneMenu id="selection2con" value="#{csvfilereader.chooseCondition}" size = 2>
 				<f:selectItem id="condition2" value="#{csvfilereader.checkCondeition}"></f:selectItem>
+           
            <!--<f:selectItem id="condition2Eq" value="#{csvfilereader._condition2 }">=</f:selectItem>
             <f:selectItem id="condition2No" value="#{csvfilereader._condition2 }">Not=</f:selectItem>-->
+            
              </h:selectOneMenu>
              </td>
 				<td>

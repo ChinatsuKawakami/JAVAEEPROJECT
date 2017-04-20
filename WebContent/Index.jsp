@@ -61,24 +61,27 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
        
 	<tr id="deleterow1">
 		<td>
-		<h:selectOneMenu id="selection1cri"size = 3>
+		<h:selectOneMenu id="selection1cri" value="#{csvfilereader.chooseCriteria }" size = 3>
             <f:selectItems value="Descriptive"></f:selectItems>
-            <f:selectItems id="ex1" value="#{csvfilereader._kindOfCriteria}" >Exchange</f:selectItems>
-            <f:selectItems id="gi1" value="#{csvfilereader._kindOfCriteria}">GICS</f:selectItems>
+            <f:selectItems id="choosecriteria1" value="#{csvfilereader.criteriaItems1}" ></f:selectItems>
+           <!-- <f:selectItems id="ex1" value="#{csvfilereader._kindOfCriteria}" >Exchange</f:selectItems>
+            <f:selectItems id="gi1" value="#{csvfilereader._kindOfCriteria}">GICS</f:selectItems>-->
            
         </h:selectOneMenu>
 		</td>
 	
 			<td>
-			<h:selectOneMenu id="selection1con" size = 2>
-            <f:selectItems id="condition1Eq" value="#{csvfilereader._condition }" >=</f:selectItems>
-            <f:selectItems id="condition1No" value="#{csvfilereader._condition }">Not=</f:selectItems>
+			<h:selectOneMenu id="selection1con" value="#{csvfilereader.chooseCondition }" size = 2>
+			 <f:selectItems id="condition1" value="#{csvfilereader.checkCondeition }" >=</f:selectItems>
+          <!--  <f:selectItems id="condition1Eq" value="#{csvfilereader._condition }" >=</f:selectItems>
+            <f:selectItems id="condition1No" value="#{csvfilereader._condition }">Not=</f:selectItems>-->
              </h:selectOneMenu>
              </td>
 				<td>
-				<h:selectOneMenu id="selection1val" size = 2>
-             <f:selectItems id="na2" value="#{csvfilereader._kindOfValue}">NASDAQ</f:selectItems>
-             <f:selectItems id="ny2" value="#{csvfilereader._kindOfValue}">New York Stock Exchange</f:selectItems>
+				<h:selectOneMenu id="selection1val" value="#{csvfilereader.chooseValues }" size = 2>
+		        <f:selectItems id="values1" value="#{csvfilereader.checkValues}"></f:selectItems>
+             <!--<f:selectItems id="na2" value="#{csvfilereader._kindOfValue}">NASDAQ</f:selectItems>
+             <f:selectItems id="ny2" value="#{csvfilereader._kindOfValue}">New York Stock Exchange</f:selectItems>-->
              </h:selectOneMenu>
              </td>
 	       </tr>
@@ -87,23 +90,26 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	<tr id="deleterow2">	
 
 		<td>
-			<h:selectOneMenu id="selection2cri" size = 3>
+			<h:selectOneMenu id="selection2cri" value="#{csvfilereader.chooseCriteria }" size = 3>
               <f:selectItems value="Descriptive"></f:selectItems>
-            <f:selectItems id="ex2" value="#{csvfilereader._kindOfCriteria2 }">Exchange</f:selectItems>
-            <f:selectItems id="gi1" value="#{csvfilereader._kindOfCriteria2 }">GICS</f:selectItems>
+              <f:selectItems id="choosecriteria2" value="#{csvfilereader.criteriaItems1}" ></f:selectItems>
+         <!--<f:selectItems id="ex2" value="#{csvfilereader._kindOfCriteria2 }">Exchange</f:selectItems>
+            <f:selectItems id="gi1" value="#{csvfilereader._kindOfCriteria2 }">GICS</f:selectItems>-->
         
           </h:selectOneMenu>
 		</td>
 			<td>
-				<h:selectOneMenu id="selection2con" size = 2>
-            <f:selectItem id="condition2Eq" value="#{csvfilereader._condition2 }">=</f:selectItem>
-            <f:selectItem id="condition2No" value="#{csvfilereader._condition2 }">Not=</f:selectItem>
+				<h:selectOneMenu id="selection2con" value="#{csvfilereader.chooseCondition}" size = 2>
+				<f:selectItem id="condition2" value="#{csvfilereader.checkCondeition}"></f:selectItem>
+           <!--<f:selectItem id="condition2Eq" value="#{csvfilereader._condition2 }">=</f:selectItem>
+            <f:selectItem id="condition2No" value="#{csvfilereader._condition2 }">Not=</f:selectItem>-->
              </h:selectOneMenu>
              </td>
 				<td>
-				<h:selectOneMenu id="selection2val2" size=2>
-           <f:selectItem id="na2" value="#{csvfilereader._kindOfValue2 }">NASDAQ</f:selectItem>
-            <f:selectItem id="ny2" value="#{csvfilereader._kindOfCriteria2 }">New York Stock Exchange</f:selectItem>
+				<h:selectOneMenu id="selection2val2" value="#{csvfilereader.chooseValues }" size=2>
+				<f:selectItems id="values2" value="#{csvfilereader.checkValues}"></f:selectItems>
+          <!-- <f:selectItem id="na2" value="#{csvfilereader._kindOfValue2 }">NASDAQ</f:selectItem>
+            <f:selectItem id="ny2" value="#{csvfilereader._kindOfCriteria2 }">New York Stock Exchange</f:selectItem>-->
              </h:selectOneMenu>
              </td>			
 	</tr>
@@ -112,23 +118,27 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 		
 		<td>
-		<h:selectOneMenu id="selection3cri" size=3>
+		<h:selectOneMenu id="selection3cri" value="#{csvfilereader.chooseCriteria }" size=3>
              <f:selectItem value="Descriptive"></f:selectItem>
-            <f:selectItem  id="mc3" value="#{csvfilereader._kindOfCriteria3}">MarketCap</f:selectItem>
-       <f:selectItem id="cp3" value="#{csvfilereader._kindOfCriteria3 }">ClosePrice</f:selectItem>
+             <f:selectItem  id="criteriaItem2" value="#{csvfilereader.criteriaItems2}"></f:selectItem>
+             
+      <!-- <f:selectItem  id="mc3" value="#{csvfilereader.criteriaItems2}">MarketCap</f:selectItem>
+       <f:selectItem id="cp3" value="#{csvfilereader.criteriaItems2}">ClosePrice</f:selectItem>-->
           </h:selectOneMenu >
 		</td>
 			<td>
-				<h:selectOneMenu id="selection3con" size=3>
-	        <f:selectItem id="bt3" value="Between">Between</f:selectItem>
-            <f:selectItem id="ge3"  value="#{csvfilereader._condition3} }">>=</f:selectItem>
-            <f:selectItem id="le3" value="#{csvfilereader._condition3} }"><=</f:selectItem >
+				<h:selectOneMenu id="selection3con" value="#{csvfilereader.chooseCondition }" size=3>
+				<f:selectItem id="checkCondition" value="#{csvfilereader.checkCondeition}"></f:selectItem>
+	       <!-- <f:selectItem id="bt3" value="#{csvfilereader.checkCondeition}">Between</f:selectItem>
+           <f:selectItem id="ge3"  value="#{csvfilereader._condition3} }">>=</f:selectItem>
+            <f:selectItem id="le3" value="#{csvfilereader._condition3} }"><=</f:selectItem >-->
              </h:selectOneMenu>
              </td>
            
 				<td>
 			<h:selectOneMenu id="selection3val1" value="#{csvfilereader.choose }" size=16>
            <f:selectItem id="closePriceOne1" value="#{csvfilereader.values}"></f:selectItem>
+           
           <!--<f:selectItem id="closePriceOne2" value="#{csvfilereader._condition3 }"></f:selectItem>
            <f:selectItem id="closePriceOne3" value="#{csvfilereader._condition3 }"></f:selectItem >
             <f:selectItem  id="closePriceOne4" value="#{csvfilereader._condition3 }"></f:selectItem >
@@ -147,7 +157,7 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
             
              </h:selectOneMenu>
              <h:selectOneMenu id="selection3val2"  value="#{csvfilereader.choose }" size = 16>
-              <f:selectItem  id="closePriceTwo1" value="#{csvfilereader.values}"></f:selectItem >
+              <f:selectItem  id="closePriceOne2" value="#{csvfilereader.values}"></f:selectItem >
        <!-- <f:selectItem  id="closePriceTwo1" value="0"></f:selectItem >
             <f:selectItem  id="closePriceTwo2" value="100m"></f:selectItem >
               <f:selectItem  id="closePriceTwo3" value="250m"></f:selectItem >
@@ -173,23 +183,25 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 	
 		
 		<td>
-		<h:selectOneMenu id="selection4cri"   size = 3>
+		<h:selectOneMenu id="selection4cri" value="#{csvfilereader.chooseCriteria }" size = 3>
                 <f:selectItem value="Descriptive"></f:selectItem>      
-            <f:selectItem id="mc4" value="MarketCap"></f:selectItem>
-         
-            <f:selectItem id="cp4" value="ClosePrice"></f:selectItem>
+                <f:selectItem id="criteriaItem3" value="#{csvfilereader.criteriaItems2}"></f:selectItem>
+                
+           <!-- <f:selectItem id="mc4" value="MarketCap"></f:selectItem>
+            <f:selectItem id="cp4" value="ClosePrice"></f:selectItem>-->
           </h:selectOneMenu>
 		</td>
 			<td>
-	  	<h:selectOneMenu id="selection4con" size =3>
-            <f:selectItem id="bt4" value="Between"></f:selectItem>
+	  	<h:selectOneMenu id="selection4con" value="#{csvfilereader.chooseCondition}" size =3>
+	  	  <f:selectItem id="checkCondition2"" value="#{csvfilereader.checkCondition}"></f:selectItem>
+           <!--<f:selectItem id="bt4" value="Between"></f:selectItem>
             <f:selectItem id="ge4" value=">="></f:selectItem>
-            <f:selectItem id="le4" value="<="></f:selectItem>
+            <f:selectItem id="le4" value="<="></f:selectItem>-->
              </h:selectOneMenu>
              </td>
 				<td>
 	        <h:selectOneMenu id="selection4val1" value="#{csvfilereader.choose }" size = 16>
-	        <f:selectItem id="closePriceThree1" value="#{csvfilereader.values}"></f:selectItem>
+	        <f:selectItem id="closePriceTwo1" value="#{csvfilereader.values}"></f:selectItem>
 	       
            <!-- <f:selectItem id="closePriceThree1" value="0"></f:selectItem>
             <f:selectItem id="closePriceThree2" value="100m"></f:selectItem>
@@ -209,8 +221,8 @@ xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
             <f:selectItem id="closePriceThree16" value="200b"></f:selectItem>-->
              </h:selectOneMenu>
              
-             <h:selectOneMenu id="selection4val1" value="#{csvfilereader.choose }" size = 16>
-             <f:selectItem id="closePriceFour1"  value="#{csvfilereader.values}"></f:selectItem>
+             <h:selectOneMenu id="selection4val2" value="#{csvfilereader.choose }" size = 16>
+             <f:selectItem id="closePriceTwo2"  value="#{csvfilereader.values}"></f:selectItem>
      <!--  <f:selectItem id="closePriceFour1" value="0m"></f:selectItem>
             <f:selectItem id="closePriceFour2" value="100m"></f:selectItem>
               <f:selectItem id="closePriceFour3" value="250m"></f:selectItem>

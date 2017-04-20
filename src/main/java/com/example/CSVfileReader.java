@@ -172,6 +172,7 @@ public class CSVfileReader {
 	}
 
 	
+	// This is code for first page's list box (Values for Marketcap and Closed Price ) 
 	private Integer choose;
 	public Integer getChoose() {
 		return choose;
@@ -209,6 +210,95 @@ public class CSVfileReader {
 	{
 		return values;
 	}
+	
+	// This is the code for criteria 
+	
+	private Integer chooseCriteria;
+	
+
+	public Integer getChooseCriteria() {
+		return chooseCriteria;
+	}
+
+
+	public void setChooseCriteria(Integer chooseCriteria) {
+		this.chooseCriteria = chooseCriteria;
+	}
+    
+	private static Map<String,Integer> criteriaItems1;
+	static
+	{
+		 criteriaItems1=new LinkedHashMap<>();
+		 criteriaItems1.put("Exchange", 1);
+		 criteriaItems1.put("GIGS", 2);
+	
+	}
+	public Map<String,Integer>getCriteriaItems1(){
+		return criteriaItems1;
+	}
+	
+	private static Map<String,Integer> criteriaItems2;
+	static
+	{
+		criteriaItems2 = new LinkedHashMap<>();
+		criteriaItems2.put("MarketCap", 1);
+		criteriaItems2.put("ClosePrice",2);
+	}
+	public Map<String,Integer>getCriteriaItems2(){
+		return criteriaItems2;
+	}
+	
+	public Integer chooseCondition;
+	
+	public Integer getChooseCondition() {
+		return chooseCondition;
+	}
+   
+
+	public void setChooseCondition(Integer chooseCondition) {
+		this.chooseCondition = chooseCondition;
+	}
+
+
+	public static Map<String,Integer> checkCondition;
+	static
+	{
+		checkCondition=new LinkedHashMap<>();
+		checkCondition.put("Betweeｎ",1);
+		checkCondition.put(">=", 2);
+		checkCondition.put("<=",3);
+		
+	}
+	public Map<String,Integer>getCheckCondeition()
+	{
+		return checkCondition;
+	}
+	
+	public Integer chooseValues;
+	
+	
+
+	public Integer getChooseValues() {
+		return chooseValues;
+	}
+
+
+	public void setChooseValues(Integer chooseValues) {
+		this.chooseValues = chooseValues;
+	}
+	public static Map<String,Integer> checkValues;
+	static 
+	{
+		checkValues = new LinkedHashMap<>();
+		checkValues.put("New York",1);
+		checkValues.put("NAS DAQ", 2);
+	}
+	
+	public Map<String,Integer>getCheckValues()
+	{
+		return checkValues;
+	}
+	
 
 	public static final SimpleDateFormat DATE_FORMAT =new SimpleDateFormat("yyyy-MM-dd");
 	public static SortedMap<Date, Stock> readCsvForOneSymbol(String path, String symbol)throws IOException {
@@ -225,7 +315,8 @@ public class CSVfileReader {
         = new BufferedReader(rd );
  
 		  String line="";
-		
+	
+		  
 		while ((line = br.readLine()) != null) {
 			String array[] = line.split( "," );
 			Stock s = new Stock();
